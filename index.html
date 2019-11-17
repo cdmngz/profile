@@ -4,27 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Portfolio</title>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+        html {
+           scroll-behavior: smooth;
         }
-        body > *{
-            margin: 3%;
-            transform: scale(1.5);
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        section {
+            height: 100vh;
+        }
+        section:nth-of-type(1) {
+            background-color: green;
+        }
+        section:nth-of-type(2) {
+            background-color: rgb(9, 46, 70);
+        }
+        #bajar, #subir {
+            border-radius: 30% 30% 0 0; 
+            height: 35px;
+            left: 50%;
+            position: absolute;
+            text-align: center;
+            width: 40px;
+            cursor: pointer;
+        }
+        #bajar {
+            background-color: rgb(9, 46, 70);
+            bottom: 0;
+            transform: translateX(-50%);
+        }
+        #subir {
+            background-color: green;
+            transform: rotate(180deg) translateX(50%);
+        }
+        #bajar a, #subir a {
+            color: white;
+            font-family: Helvetica;
+            animation: movete 1s infinite ease-in;
+            display: block;
+            margin: 5px;
+        }
+        @keyframes movete {
+            50% {transform: translateY(3px);}
         }
     </style>
 </head>
 <body>
 
-    <input type="number" autofocus>
-    <button>Enviar Nota</button>
+    <section>
+
+        <div id="bajar">
+            <a>v</a>
+        </div>
+    </section>
+    <section>
+        <div id="subir">
+                <a>v</a>
+            </div>
+    </section>
 
     <script>
         
+        const Ysize = window.innerHeight
+        /*
         const boton = document.getElementsByTagName("button")[0]
         let nota = () => document.getElementsByTagName("input")[0].value
 
@@ -36,8 +81,10 @@
             (nota > 7  && nota <= 9) ? "Notable" :
             (nota > 9  && nota <= 10) ? "Sobresaliente" :
             "Error. Introduzca un valor entre 0 - 10"
+            */
 
-        boton.addEventListener("click", () => console.log(conclusion(nota())))
+            document.getElementById("bajar").addEventListener("click", () => window.scrollTo(0,Ysize))
+            document.getElementById("subir").addEventListener("click", () => window.scrollTo(0,0))
 
     </script>
 </body>
