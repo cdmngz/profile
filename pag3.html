@@ -1,0 +1,57 @@
+<head>
+<style>
+    body {
+        background-color: darkorange;
+    }
+
+    h1{
+        font-size: 60px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color:darkblue;
+    }
+    p {
+        color: darkviolet;
+        background-color: deepskyblue;
+        padding: 50px;
+    }
+    input {
+        font-size: 50px;
+    } 
+    button {
+        font-size: 50px;  
+        background-color: fuchsia;
+        padding: 50px;
+        transition: 1s;
+    }
+    button:hover {
+        background-color: honeydew;
+        box-shadow: 1px 1px 8px 10px rgba(0,0,0,1);
+    }
+</style>
+<title>Mi Pagina</title>
+</head>
+
+<body>
+    
+    <h1>Pagina3</h1>
+
+    <p>
+        Rusia es el país que limita con mayor número de países, un total de dieciséis,n. 5​ y el que tiene las fronteras más extensas. Limita con los siguientes países (empezando por el noroeste y siguiendo el sentido antihorario): Noruega, Finlandia, Estonia, Letonia, Bielorrusia, Lituania,n. 6​ Polonia,n. 6​ Ucrania,n. 7​ Georgia,n. 8​ Azerbaiyán, Kazajistán, República Popular China, Mongolia y Corea del Norte. Tiene límites de aguas territoriales con varios de los anteriores, con Japón y con los Estados Unidos (en concreto, con el estado de Alaska). Limita también con los estados de reconocimiento limitado Abjasia, Osetia del Sur y la Unión de Repúblicas Populares (Nueva Rusia). Las costas de Rusia están bañadas por el océano Ártico, el norte del Océano Pacífico y mares interiores como el Báltico, el Negro y el Caspio.
+    </p>
+
+    <input id="txt" type="text" placeholder="Ingrese su nombre">
+    <input type="password" placeholder="Ingrese su clave">
+
+    <br><br><br><br><br><br><br>
+    <button id="bot">Enviar</button>
+
+
+
+<script>
+    
+    document.getElementById("bot").addEventListener('click', () =>
+        alert(document.getElementById("txt").value)
+    )
+
+</script>
+</body>
