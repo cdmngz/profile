@@ -19,8 +19,7 @@
 
     <section>
 
-
-        <!--<span></span>-->
+        <span></span>
 
         <div id="contenedor">
             <a class="polygon">primera pag</a>  
@@ -30,11 +29,7 @@
 
     </section>
 
-    <section>
-
-        
-
-    </section>
+    <section></section>
 
     <script>
 
@@ -56,16 +51,7 @@
             )
         )        
         document.getElementsByClassName("polygon")[1].addEventListener("click", () =>
-            (
-                window.scrollTo(0,Ysize),
-                xhr.open('GET', 'pag2.html', true),
-                xhr.onreadystatechange = function() {
-                    if (this.readyState!==4) return;
-                    if (this.status!==200) return; // or whatever error handling you want
-                    document.getElementsByTagName("section")[1].innerHTML = xhr.responseText;
-                },
-                xhr.send()
-            )
+            document.getElementsByTagName("section")[1].innerHTML='<object type="text/html" data="pag1.html" ></object>'
         )
         document.getElementsByClassName("polygon")[2].addEventListener("click", () =>
             (

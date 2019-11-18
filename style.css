@@ -5,6 +5,11 @@ body {
     margin: 0;
     padding: 0;
 }
+object {
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+}
 section {
     height: 100vh;
     overflow: hidden;
