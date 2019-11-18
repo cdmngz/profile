@@ -48,8 +48,8 @@ span::before {
 @keyframes bienvenido {
     0% { content: "Hola"; }
     25% { content: "Hola"; }
-    30% { content: 'Como estas?'; }
-    55% { content: 'Como estas?'; }
+    30% { content: 'Cómo estás?'; }
+    55% { content: 'Cómo estás?'; }
     60% { content: 'Bienvenido'; }
     95% { content: 'Bienvenido'; opacity: 1;}
     100% {  opacity: 0; }
