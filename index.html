@@ -48,7 +48,7 @@
         xhr.onreadystatechange = function() {
             if (this.readyState!==4) return;
             if (this.status!==200) return; // or whatever error handling you want
-            document.getElementsByTagName("section")[1].innerHTML = response;
+            document.getElementsByTagName("section")[1].innerHTML = xhr.response;
         };
         xhr.send();
         
