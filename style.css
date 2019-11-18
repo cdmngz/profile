@@ -1,0 +1,106 @@
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+section {
+    height: 100vh;
+    overflow: hidden;
+}
+section:nth-of-type(1) {
+    align-items: center;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+}
+section:nth-of-type(2) {
+    background-color: rgb(9, 46, 70);
+    overflow: hidden;
+}
+span {
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    color: white;
+    font-size: 4em;
+    position: fixed;
+    top: 40px;
+    width: 500px;
+    text-align: center;
+    overflow: hidden;
+}
+span::after {
+    content: "";
+    animation: bienvenido 12s forwards;
+    height: 100%;
+    width: 100%;
+}
+span::before {
+    content: '';
+    height: 100%;
+    background-color: yellowgreen;
+    width: 100%;
+    position: absolute;
+    left: -100%;
+    z-index: 1;
+    animation: barra 12s ease forwards;
+}
+@keyframes bienvenido {
+    0% { content: "Hola"; }
+    25% { content: "Hola"; }
+    30% { content: 'Como estas?'; }
+    55% { content: 'Como estas?'; }
+    60% { content: 'Bienvenido'; }
+    95% { content: 'Bienvenido'; opacity: 1;}
+    100% {  opacity: 0; }
+}
+@keyframes barra {
+    25% { left: -100%; }
+    30% { left: 100%; }
+    55% { left: 100%; }
+    60% { left: -100%; }
+    95% { left: -100%; }
+    100% { left: -100%; }
+}
+#bajar, #subir {
+    border-radius: 30% 30% 0 0;
+    cursor: pointer;
+    height: 30px;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    width: 40px;
+}
+#bajar {
+    background-color: rgb(9, 46, 70);
+    bottom: 0;
+    transform: translateX(-50%);
+}
+#subir {
+    background-color: green;
+    transform: rotate(180deg) translateX(50%);
+}
+#bajar a, #subir a {
+    animation: movete 1s infinite ease-in;
+    color: white;
+    display: block;
+    font-family: Helvetica;
+    margin: 5px;
+}
+@keyframes movete {
+    50% {transform: translateY(3px);}
+}
+#contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 70vh;
+    width: 100%;
+}
+#contenedor > * {
+    cursor: pointer;
+    height: 14vw;
+    width: 12vw;
+    background: rgb(73, 207, 201);
+    clip-path: polygon(50% 0, 100% 15%, 95% 70%, 50% 100%, 5% 69%, 0 15%);
+}
