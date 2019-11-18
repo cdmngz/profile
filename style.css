@@ -1,4 +1,4 @@
-html {
+html{
     scroll-behavior: smooth;
 }
 body {
@@ -20,47 +20,31 @@ section:nth-of-type(2) {
     overflow: hidden;
 }
 span {
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
     color: white;
     font-size: 4em;
+    overflow: hidden;
     position: fixed;
+    text-align: center;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
     top: 40px;
     width: 500px;
-    text-align: center;
-    overflow: hidden;
+    z-index: 1;
 }
 span::after {
-    content: "";
     animation: bienvenido 12s forwards;
+    content: "";
     height: 100%;
     width: 100%;
 }
 span::before {
+    animation: barra 12s ease forwards;
+    background-color: yellowgreen;
     content: '';
     height: 100%;
-    background-color: yellowgreen;
     width: 100%;
-    position: absolute;
     left: -100%;
-    z-index: 1;
-    animation: barra 12s ease forwards;
-}
-@keyframes bienvenido {
-    0% { content: "Hola"; }
-    25% { content: "Hola"; }
-    30% { content: 'Cómo estás?'; }
-    55% { content: 'Cómo estás?'; }
-    60% { content: 'Bienvenido'; }
-    95% { content: 'Bienvenido'; opacity: 1;}
-    100% {  opacity: 0; }
-}
-@keyframes barra {
-    25% { left: -100%; }
-    30% { left: 100%; }
-    55% { left: 100%; }
-    60% { left: -100%; }
-    95% { left: -100%; }
-    100% { left: -100%; }
+    position: absolute;
+    z-index: 2;
 }
 #bajar, #subir {
     border-radius: 30% 30% 0 0;
@@ -87,9 +71,6 @@ span::before {
     font-family: Helvetica;
     margin: 5px;
 }
-@keyframes movete {
-    50% {transform: translateY(3px);}
-}
 #contenedor {
     display: flex;
     align-items: center;
@@ -103,4 +84,24 @@ span::before {
     width: 12vw;
     background: rgb(73, 207, 201);
     clip-path: polygon(50% 0, 100% 15%, 95% 70%, 50% 100%, 5% 69%, 0 15%);
+}
+@keyframes barra {
+    25% { left: -100%; }
+    30% { left: 100%; }
+    55% { left: 100%; }
+    60% { left: -100%; }
+    95% { left: -100%; }
+    100% { left: -100%; }
+}
+@keyframes bienvenido {
+    0% { content: "Hola"; }
+    25% { content: "Hola"; }
+    30% { content: 'Cómo estás?'; }
+    55% { content: 'Cómo estás?'; }
+    60% { content: 'Bienvenido'; }
+    95% { content: 'Bienvenido'; opacity: 1;}
+    100% {  opacity: 0; }
+}
+@keyframes movete {
+    50% {transform: translateY(3px);}
 }
