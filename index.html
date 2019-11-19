@@ -34,37 +34,14 @@
     <script>
 
         const Ysize = window.innerHeight
-        const polygons = document.getElementsByClassName("polygon")
-        const links = ["pag1.html", "pag2.html", "pag3.html"]        
-        let xhr= new XMLHttpRequest()
+        const links = ["pag1/", "pag2.html", "pag3.html"]
 
-        document.getElementsByClassName("polygon")[0].addEventListener("click", () =>
-            (
+        links.forEach( (elem,i) => (
+            console.log(`polygon ${i} gonna load ${elem} in section 1`),    
+            document.getElementsByClassName("polygon")[i].addEventListener("click", () => (
                 window.scrollTo(0,Ysize),
-                xhr.open('GET', 'pag1.html'),
-                xhr.onreadystatechange = function() {
-                    if (this.readyState!==4) return;
-                    if (this.status!==200) return; // or whatever error handling you want
-                    document.getElementsByTagName("section")[1].innerHTML = xhr.response;
-                },
-                xhr.send()
-            )
-        )        
-        document.getElementsByClassName("polygon")[1].addEventListener("click", () =>
-            document.getElementsByTagName("section")[1].innerHTML='<object type="text/html" data="pag1.html" ></object>'
-        )
-        document.getElementsByClassName("polygon")[2].addEventListener("click", () =>
-            (
-                window.scrollTo(0,Ysize),
-                xhr.open('GET', 'pag3.html', true),
-                xhr.onreadystatechange = function() {
-                    if (this.readyState!==4) return;
-                    if (this.status!==200) return; // or whatever error handling you want
-                    document.getElementsByTagName("section")[1].innerHTML = xhr.response;
-                },
-                xhr.send()
-            )
-        )
+                document.getElementsByTagName("section")[1].innerHTML='<object type="text/html" data="'+elem+'" ></object>'
+        ))))
 
         document.getElementById("bajar").addEventListener("click", () => window.scrollTo(0,Ysize))
         document.getElementById("subir").addEventListener("click", () => window.scrollTo(0,0))

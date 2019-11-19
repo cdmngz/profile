@@ -28,21 +28,21 @@ span {
     color: white;
     font-size: 3vw;
     overflow: hidden;
-    position: fixed;
+    position: absolute;
     text-align: center;
     text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
-    top: 40px;
-    width: 500px;
+    top: 5vh;
+    width: 20vw;
     z-index: 1;
 }
 span::after {
-    animation: bienvenido 12s forwards;
+    animation: bienvenido 6s forwards;
     content: "";
     height: 100%;
     width: 100%;
 }
 span::before {
-    animation: barra 12s ease forwards;
+    animation: barra 6s ease forwards;
     background-color: yellowgreen;
     content: '';
     height: 100%;
@@ -110,10 +110,10 @@ span::before {
 @keyframes bienvenido {
     0% { content: "Hola"; }
     25% { content: "Hola"; }
-    30% { content: 'Cómo estás?'; }
-    55% { content: 'Cómo estás?'; }
-    60% { content: 'Bienvenido'; }
-    95% { content: 'Bienvenido'; opacity: 1;}
+    30% { content: 'Bienvenido'; }
+    55% { content: 'Bienvenido'; }
+    60% { content: 'Disfruta'; }
+    95% { content: 'Disfruta'; opacity: 1;}
     100% {  opacity: 0; }
 }
 @keyframes movete {
