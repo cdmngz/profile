@@ -9,19 +9,22 @@ object {
     height: 100%;
     overflow: hidden;
     width: 100%;
+    position: absolute;
 }
 section {
     height: 100vh;
+    width: 100%;
     overflow: hidden;
+    position: relative;
 }
 section:nth-of-type(1) {
     align-items: center;
-    background-color: green;
+    background-color: white;
     display: flex;
     justify-content: center;
 }
 section:nth-of-type(2) {
-    background-color: rgb(9, 46, 70);
+    background: linear-gradient(to right, rgb(43, 9, 9), rgb(112, 14, 14));
     overflow: hidden;
 }
 span {
@@ -30,7 +33,7 @@ span {
     overflow: hidden;
     position: absolute;
     text-align: center;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    text-shadow: 1px 1px 3px rgba(0,0,0,.8);
     top: 5vh;
     width: 20vw;
     z-index: 1;
@@ -43,7 +46,7 @@ span::after {
 }
 span::before {
     animation: barra 6s ease forwards;
-    background-color: yellowgreen;
+    background-color: rgb(102, 22, 35);
     content: '';
     height: 100%;
     width: 100%;
@@ -59,20 +62,22 @@ span::before {
     position: absolute;
     text-align: center;
     width: 40px;
+    z-index: 1;
 }
 #bajar {
-    background-color: rgb(9, 46, 70);
+    background-color: rgb(31, 0, 0);
     bottom: 0;
+    color: white;
     transform: translateX(-50%);
 }
 #subir {
-    background-color: green;
+    background-color: rgb(255, 255, 255);
     bottom: 0;
+    color: black;
     transform: rotate(180deg) translateX(50%) translateY(-100%);
 }
 #bajar a, #subir a {
     animation: movete 1s infinite ease-in;
-    color: white;
     display: block;
     font-family: Helvetica;
     margin: 5px;
@@ -87,11 +92,11 @@ span::before {
 }
 .polygon {
     align-items: center;
-    background: rgb(73, 207, 201);
     clip-path: polygon(50% 0, 100% 15%, 95% 70%, 50% 100%, 5% 69%, 0 15%);
-    color: rgb(9, 46, 70);
+    color: white;
     cursor: pointer;
     display: flex;
+    font-family: monospace;
     font-size: 1.6vw;
     height: 14vw;
     justify-content: center;

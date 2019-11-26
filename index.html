@@ -34,15 +34,16 @@
 
     <script>
 
-        const Ysize = window.innerHeight
+        const Ysize = (window.innerHeight)*2
         const links = [
             "https://cdmngz.github.io/changeRGB/",
             "https://cdmngz.github.io/T-RexChrome/",
             "https://cdmngz.github.io/radio/",
             "pag2.html"]
 
-        links.forEach( (elem,i) => (
-            console.log(`polygon ${i} gonna load ${elem} in section 1`),    
+        links.forEach( (elem, i) => (
+            console.log(`polygon ${i} gonna load ${elem} in section 1`),
+            document.getElementsByClassName("polygon")[i].style.backgroundColor = `rgb(${30*i}, ${i}, ${i})`,
             document.getElementsByClassName("polygon")[i].addEventListener("click", () => (
                 window.scrollTo(0,Ysize),
                 document.getElementsByTagName("section")[1].innerHTML='<object type="text/html" data="'+elem+'" ></object>'
