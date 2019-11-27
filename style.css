@@ -35,7 +35,7 @@ span {
     text-align: center;
     top: 5vh;
     width: 20vw;
-    z-index: 1;
+    z-index: 2;
 }
 span::after {
     animation: bienvenido 6s forwards;
@@ -76,7 +76,7 @@ span::before {
     transform: rotate(180deg) translateX(50%) translateY(-100%);
 }
 #bajar a, #subir a {
-    animation: movete 1s infinite ease-in;
+    animation: UpDown 1s infinite ease-in;
     display: block;
     font-family: Helvetica;
     margin: 5px;
@@ -92,19 +92,20 @@ span::before {
 }
 .circles {
     position: absolute;
+    transition: 3s;
     z-index: 1;
 }
 .circles:nth-of-type(2) {
-    background-color: rgba(255, 0, 0, 0.5);
+    background-color: rgba(250, 0, 0, 0.1);
     border-radius: 50%;
-    height: 120vh;
-    width: 120vh;
+    height: 130vh;
+    width: 130vh;
     top: -65%;
     right: -65%;
     animation: circles1 110s infinite;
 }
 .circles:nth-of-type(3) {
-    background-color: rgba(0, 255, 0, 0.5);
+    background-color: rgba(80, 0, 0, 0.5);
     border-radius: 50%;
     height: 70vh;
     width: 70vh;
@@ -113,7 +114,7 @@ span::before {
     animation: circles2 80s infinite;
 }
 .circles:nth-of-type(4) {
-    background-color: rgba(0, 0, 255, 0.5);
+    background-color: rgba(50, 0, 0, 0.8);
     border-radius: 50%;
     height: 40vh;
     width: 40vh;
@@ -154,14 +155,14 @@ span::before {
     100% {  opacity: 0; }
 }
 @keyframes circles1 {
-    100% { transform: translate(-200vw, 200vh);}
+    100% { transform: translate(-200vw, 200vh) rotate(360deg); }
 }
 @keyframes circles2 {
-    100% { transform: translate(400vw, 200vh);}
+    100% { transform: translate(400vw, 200vh) rotate(-360deg);}
 }
 @keyframes circles3 {
-    100% { transform: translate(-200vw, 200vh);}
+    100% { transform: translate(-200vw, 200vh) rotate(360deg); }
 }
-@keyframes movete {
+@keyframes UpDown {
     50% { transform: translateY(3px); }
 }

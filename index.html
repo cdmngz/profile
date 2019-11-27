@@ -31,6 +31,7 @@
         <div class="circles"></div>
         <div class="circles"></div>
         <div class="circles"></div>
+        
     </section>
 
     <section></section>
@@ -43,13 +44,38 @@
             "https://cdmngz.github.io/T-RexChrome/",
             "https://cdmngz.github.io/radio/",
             "pag2.html"]
+        const css = [
+            [
+            "background-color: rgba(255, 0, 0, 0.5);",
+            "background-color: rgba(0, 255, 0, 0.5);",
+            "background-color: rgba(0, 0, 255, 0.5);"
+            ],
+            [
+            "background-color: transparent; width: 0px; height: 0px; border-right: 120px solid transparent; border-top: 120px solid yellow; border-left: 120px solid yellow; border-bottom: 120px solid yellow; border-top-left-radius: 120px;border-top-right-radius: 120px; border-bottom-left-radius: 120px;border-bottom-right-radius: 120px;",
+            "background-color: rgba(0, 0, 0, 0.3); border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; height: 180px; width: 126px;",
+            "background-color: rgba(0, 0, 0, 0.1);"
+            ],
+            [
+            "background-color: rgba(255, 0, 0, 0.5);",
+            "background-color: rgba(0, 255, 0, 0.5);",
+            "background-color: rgba(0, 0, 255, 0.5);"
+            ],
+            [
+            "background-color: rgba(0, 0, 30, 0.6); border-radius: 0%;",
+            "background-color: rgba(0, 0, 50, 0.6); border-radius: 0%;",
+            "background-color: rgba(0, 0, 70, 0.6); border-radius: 0%;"
+            ]
+        ]
 
         links.forEach( (elem, i) => (
-            console.log(`polygon ${i} gonna load ${elem} in section 1`),
             document.getElementsByClassName("polygon")[i].style.backgroundColor = `rgb(${30*i}, ${i}, ${i})`,
             document.getElementsByClassName("polygon")[i].addEventListener("click", () => (
                 window.scrollTo(0,Ysize),
-                document.getElementsByTagName("section")[1].innerHTML='<object type="text/html" data="'+elem+'" ></object>'
+                document.getElementsByTagName("section")[1].innerHTML=`<object type="text/html" data="${elem}" ></object>`,
+                console.log(`circles 0 gonna load ${css[i][0]} in section 1`),
+                document.getElementsByClassName("circles")[0].style.cssText = `${css[i][0]}`,
+                document.getElementsByClassName("circles")[1].style.cssText = `${css[i][1]}`,
+                document.getElementsByClassName("circles")[2].style.cssText = `${css[i][2]}`
         ))))
 
         document.getElementById("bajar").addEventListener("click", () => window.scrollTo(0,Ysize))
