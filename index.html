@@ -10,12 +10,7 @@
 </head>
 <body>
     
-    <div id="bajar">
-        <a>v</a>
-    </div>
-    <div id="subir">
-            <a>v</a>
-    </div>
+    <div id="subir"><a>v</a></div>
 
     <section>
 
@@ -38,7 +33,7 @@
 
     <script>
 
-        const Ysize = (window.innerHeight)*2
+        const Ysize = window.innerHeight
         const links = [
             "https://cdmngz.github.io/changeRGB/",
             "https://cdmngz.github.io/T-RexChrome/",
@@ -46,9 +41,9 @@
             "https://cdmngz.github.io/curriculum/"]
         const css = [
             [
-            "background-color: rgba(255, 0, 0, 0.5);",
-            "background-color: rgba(0, 255, 0, 0.5);",
-            "background-color: rgba(0, 0, 255, 0.5);"
+            "background-color: rgba(255, 0, 0, 0.4);",
+            "background-color: rgba(0, 255, 0, 0.4);",
+            "background-color: rgba(0, 0, 255, 0.4);"
             ],
             [
             "background-color: transparent; width: 0px; height: 0px; border-right: 120px solid transparent; border-top: 120px solid yellow; border-left: 120px solid yellow; border-bottom: 120px solid yellow; border-top-left-radius: 120px;border-top-right-radius: 120px; border-bottom-left-radius: 120px;border-bottom-right-radius: 120px;",
@@ -61,14 +56,14 @@
             "background-color: rgba(14, 50, 100, 0.5);"
             ],
             [
-            "background-color: rgba(0, 0, 30, 0.6); border-radius: 0%;",
-            "background-color: rgba(0, 0, 50, 0.6); border-radius: 0%;",
-            "background-color: rgba(0, 0, 70, 0.6); border-radius: 0%;"
+            "background-color: rgba(0, 0, 150, 0.1); border-radius: 0%;",
+            "background-color: rgba(0, 0, 170, 0.1); border-radius: 0%;",
+            "background-color: rgba(0, 0, 190, 0.1); border-radius: 0%;"
             ]
         ]
 
         links.forEach( (elem, i) => (
-            document.getElementsByClassName("polygon")[i].style.backgroundColor = `rgb(${30*i}, ${i}, ${i})`,
+            document.getElementsByClassName("polygon")[i].style.backgroundColor = `rgb(${40*i}, ${i}, ${i})`,
             document.getElementsByClassName("polygon")[i].addEventListener("click", () => (
                 window.scrollTo(0,Ysize),
                 document.getElementsByTagName("section")[1].innerHTML=`<object type="text/html" data="${elem}" ></object>`,
@@ -78,7 +73,6 @@
                 document.getElementsByClassName("circles")[2].style.cssText = `${css[i][2]}`
         ))))
 
-        document.getElementById("bajar").addEventListener("click", () => window.scrollTo(0,Ysize))
         document.getElementById("subir").addEventListener("click", () => window.scrollTo(0,0))
 
     </script>
