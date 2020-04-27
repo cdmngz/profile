@@ -1,3 +1,11 @@
+@font-face {
+    font-family: Belgrano-Regular;
+    src: url('Belgrano-Regular.ttf');
+}
+@font-face {
+    font-family: RozhaOne-Regular;
+    src: url('RozhaOne-Regular.ttf');
+}
 html {
     color: #212529;
     overflow: hidden;
@@ -5,23 +13,23 @@ html {
     user-select: none;
 }
 body {
+    background-color: #FAFAFA;
+    box-sizing: content-box;
     margin: 0;
     padding: 0;
-    box-sizing: content-box;
-    background-color: #FAFAFA;
 }
 object {
     height: 100%;
     overflow: hidden;
-    width: 100%;
     position: absolute;
+    width: 100%;
 }
 section {
     height: 100vh; /* Fallback for browsers that do not support Custom Properties */
     height: calc(var(--vh, 1vh) * 100);
     width: 100%;
-    overflow: hidden;
     position: relative;
+    overflow: hidden;
 }
 section:nth-of-type(1) {
     align-items: center;
@@ -55,20 +63,6 @@ section:nth-of-type(2) {
     margin: 5px;
     user-select: none;
 }
-@keyframes UpDown {
-    50% { transform: translateY(3px); }
-}
-
-
-@font-face {
-    font-family: Belgrano-Regular;
-    src: url('Belgrano-Regular.ttf');
-}
-@font-face {
-    font-family: RozhaOne-Regular;
-    src: url('RozhaOne-Regular.ttf');
-}
-
 .container {
     position: relative;
     display: grid;
@@ -124,7 +118,6 @@ section:nth-of-type(2) {
     position: relative;
 }
 .container li::after {
-    background-color: royalblue;
     content: '';
     height: 100%;
     left: 0;
@@ -133,7 +126,6 @@ section:nth-of-type(2) {
     top: 60%;
     transition: .5s;
     width: 100%;
-    z-index: -1;
 }
 .container li:nth-of-type(1) { text-decoration: none; }
 .container li:nth-of-type(2) { text-decoration-color: rgb(21, 137, 73); }
@@ -162,4 +154,8 @@ section:nth-of-type(2) {
     .container li {
         font-size: calc(1em + 1vw);
     }
+}
+
+@keyframes UpDown {
+    50% { transform: translateY(3px); }
 }
