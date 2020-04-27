@@ -1,2 +1,2 @@
 # profile
-My home profile
+Thanks for coming. Here, my home profile...
