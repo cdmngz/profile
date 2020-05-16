@@ -31,15 +31,6 @@ section {
     position: relative;
     overflow: hidden;
 }
-section:nth-of-type(1) {
-    align-items: center;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-}
-section:nth-of-type(2) {
-    background: linear-gradient(to right, rgb(9, 43, 9), rgb(14, 114, 14));
-}
 #subir {
     border-radius: 30% 30% 0 0;
     cursor: pointer;
@@ -128,6 +119,10 @@ section:nth-of-type(2) {
     text-decoration: underline rgba(0, 100, 120, 0.6);
 }
 
+@keyframes UpDown {
+    50% { transform: translateY(3px); }
+}
+
 @media only screen and (max-width: 768px) {
     .uno span {
         font-size: calc(6em + 6vw);
@@ -138,8 +133,4 @@ section:nth-of-type(2) {
     .container li {
         font-size: calc(1em + 1vw);
     }
-}
-
-@keyframes UpDown {
-    50% { transform: translateY(3px); }
 }
