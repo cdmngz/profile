@@ -1,58 +1,66 @@
 @font-face {
-    font-family: Belgrano-Regular;
-    src: url('Belgrano-Regular.ttf');
+  font-family: Belgrano-Regular;
+  src: url('Belgrano-Regular.ttf');
 }
 @font-face {
-    font-family: RozhaOne-Regular;
-    src: url('RozhaOne-Regular.ttf');
+  font-family: RozhaOne-Regular;
+  src: url('RozhaOne-Regular.ttf');
 }
 html {
-    color: #212529;
-    overflow: hidden;
-    scroll-behavior: smooth;
-    user-select: none;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  user-select: none;
 }
 body {
-    background-color: #FAFAFA;
-    box-sizing: content-box;
-    margin: 0;
-    padding: 0;
+  background-color: #FAFAFA;
+  box-sizing: content-box;
+  color: #212529;
+  margin: 0;
+  padding: 0;
 }
 object {
-    height: 100%;
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
 }
 section {
-    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-    height: calc(var(--vh, 1vh) * 100);
-    width: 100%;
-    position: relative;
-    overflow: hidden;
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+#under {
+  position: absolute;
+  height: 2px;
+  width: 0;
+  background-color: rgb(160, 220, 100);
+  transition: .5s;
+  transform: translateY(-5px);
 }
 #subir {
-    border-radius: 30% 30% 0 0;
-    cursor: pointer;
-    height: 30px;
-    left: 50%;
-    position: absolute;
-    text-align: center;
-    width: 40px;
-    z-index: 5;
+  border-radius: 30% 30% 0 0;
+  cursor: pointer;
+  height: 30px;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  width: 40px;
+  z-index: 5;
 }
 #subir {
-    background-color: rgb(255, 255, 255);
-    bottom: 0;
-    color: black;
-    transform: rotate(180deg) translateX(50%) translateY(-100%);
+  background-color: rgb(255, 255, 255);
+  bottom: 0;
+  color: black;
+  transform: rotate(180deg) translateX(50%) translateY(-100%);
 }
 #subir a {
-    animation: UpDown 1s infinite ease-in;
-    display: block;
-    font-family: Helvetica;
-    margin: 5px;
-    user-select: none;
+  animation: UpDown 1s infinite ease-in;
+  display: block;
+  font-family: Helvetica;
+  margin: 5px;
+  user-select: none;
 }
 .container {
     position: relative;
@@ -63,74 +71,101 @@ section {
     width: 100vw;
 }
 .container > * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 .container p {
-    font-family: 'Belgrano-Regular';
-    font-size: calc(1em + 1vw);
-    grid-column: 2/3;
-    grid-row: 2;
+  animation: title 2s 1.3s forwards;
+  font-family: 'Belgrano-Regular';
+  font-size: calc(1em + 1vw);
+  grid-column: 2/3;
+  grid-row: 2;
+  opacity: 0;
+  transform: translateY(10px);
 }
 .container ul {
-    grid-column: 2/3;
-    grid-row: 4;
-    text-align-last: justify;
+  grid-column: 2/3;
+  grid-row: 4;
+  position: relative;
+  text-align-last: justify;
+  transform: translateY(10px);
 }
-.container li {
-    cursor: pointer;
-    display: inline;
-    font-family: 'Belgrano-Regular';
-    font-size: calc(1.1em + 1.1vw);
-    text-decoration: underline;
+.container ul li {
+  cursor: pointer;
+  display: inline;
+  font-family: 'Belgrano-Regular';
+  font-size: calc(1.1em + 1.1vw);
+  opacity: 0;
+  position: relative;
+  transform: translateX(500px);
 }
-.container li:nth-of-type(1) { text-decoration: none; }
-.container li:nth-of-type(2) { text-decoration-color: rgb(14, 140, 21); }
-.container li:nth-of-type(3) { text-decoration-color: rgb(60, 181, 89); }
-.container li:nth-of-type(4) { text-decoration-color: rgb(144, 193, 79); }
-.container li:nth-of-type(5) { text-decoration-color: rgb(160, 220, 100); }
-.container li:hover {
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-    text-decoration: underline rgba(0, 100, 120, 0.6);
-}
+.container ul li:nth-of-type(1) { animation: justShow 2s 2s forwards; }
+.container ul li:nth-of-type(2) { animation: justShow 2s 2.5s forwards; }
+.container ul li:nth-of-type(3) { animation: justShow 2s 3s forwards; }
+.container ul li:nth-of-type(4) { animation: justShow 2s 3.5s forwards; }
+.container ul li:nth-of-type(5) { animation: justShow 2s 4s forwards; }
+.container ul li:nth-of-type(6) { animation: justShow 2s 4.5s forwards; }
 .uno {
-    grid-column: 2/3;
-    grid-row: 1;
-    position: relative;
-}
-.uno span::before {
-    content: '';
-    width: 60%;
-    height: calc(0.04em + 0.04vw);
-    top: calc(0.35em + 0.35vw);
-    position: absolute;
-    background-color: #22AA33;
+  animation: title 2s forwards;
+  grid-column: 2/3;
+  grid-row: 1;
+  opacity: 0;
+  position: relative;
+  transform: translateY(30px);
 }
 .uno span {
-    border-bottom: 2px solid rgba(0, 120, 0, 0.6);
-    bottom: 0;
-    font-family: 'RozhaOne-Regular';
-    font-size: calc(8em + 8vw);
-    height: 0.99em;
-    position: absolute;
+  border-bottom: 2px solid rgba(0, 120, 0, 0.6);
+  bottom: 20px;
+  font-family: 'RozhaOne-Regular';
+  font-size: calc(8em + 8vw);
+  height: 0.99em;
+  position: absolute;
+}
+.uno span::before {
+  animation: titleBar 3.5s 2s linear forwards;
+  background-color: #22AA33;
+  content: '';
+  height: calc(0.04em + 0.04vw);
+  position: absolute;
+  top: calc(0.35em + 0.35vw);
+  width: 0;
 }
 @keyframes UpDown {
-    50% { transform: translateY(3px); }
+  50% { transform: translateY(3px); }
+}
+@keyframes title {
+  60% {
+    transform: translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes titleBar {
+  100% {
+    width: 60%;
+  }
+}
+@keyframes justShow {
+  100% {
+    opacity: 1;
+  }
 }
 @media only screen and (max-width: 768px) {
-    .uno span {
-        font-size: calc(6em + 6vw);
-    }
-    .container p {
-        font-size: calc(0.8em + 0.7vw);
-    }
-    .container li {
-        font-size: calc(1em + 1vw);
-    }
+  .uno span {
+      font-size: calc(6em + 6vw);
+  }
+  .container p {
+      font-size: calc(0.8em + 0.7vw);
+  }
+  .container li {
+      font-size: calc(1em + 1vw);
+  }
 }
 @media only screen and (max-width: 380px) {
-    .container li {
-        display: block;
-        font-size: calc(1em + 1vw);
-    }
+  .container li {
+      display: block;
+      font-size: calc(1em + 1vw);
+  }
 }
