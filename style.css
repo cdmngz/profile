@@ -1,10 +1,14 @@
 @font-face {
+  font-family: RozhaOne-Regular;
+  src: url('RozhaOne-Regular.ttf');
+}
+@font-face {
   font-family: Belgrano-Regular;
   src: url('Belgrano-Regular.ttf');
 }
 @font-face {
-  font-family: RozhaOne-Regular;
-  src: url('RozhaOne-Regular.ttf');
+  font-family: Lobster;
+  src: url('Lobster-Regular.ttf');
 }
 html {
   overflow: hidden;
@@ -14,7 +18,7 @@ html {
 body {
   background-color: #FAFAFA;
   box-sizing: content-box;
-  color: #212529;
+  color: rgba(255, 255, 255, 0.9);
   margin: 0;
   padding: 0;
 }
@@ -35,7 +39,7 @@ section {
   position: absolute;
   height: 2px;
   width: 0;
-  background-color: rgb(160, 220, 100);
+  background-color: rgba(255, 255, 0, 0.8);
   transition: .5s;
   transform: translateY(-5px);
 }
@@ -47,7 +51,7 @@ section {
   position: absolute;
   text-align: center;
   width: 40px;
-  z-index: 5;
+  z-index: 4;
 }
 #subir {
   background-color: rgb(255, 255, 255);
@@ -58,25 +62,25 @@ section {
 #subir a {
   animation: UpDown 1s infinite ease-in;
   display: block;
-  font-family: Helvetica;
+  font-family: Arial, Helvetica, sans-serif;
   margin: 5px;
   user-select: none;
 }
 .container {
-    position: relative;
-    display: grid;
-    grid-template-rows: 50% 10% 6% 10% auto;
-    grid-template-columns: 10% 80% 10%;
-    height: 100vh;
-    width: 100vw;
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  grid-template-rows: 50% 10% 6% 10% auto;
+  height: 100vh;
+  position: relative;
+  width: 100vw;
 }
 .container > * {
   margin: 0;
   padding: 0;
 }
 .container p {
-  animation: title 2s 1.3s forwards;
-  font-family: 'Belgrano-Regular';
+  animation: title 4s 2s forwards;
+  font-family: 'Lobster', cursive;
   font-size: calc(1em + 1vw);
   grid-column: 2/3;
   grid-row: 2;
@@ -88,7 +92,7 @@ section {
   grid-row: 4;
   position: relative;
   text-align-last: justify;
-  transform: translateY(10px);
+  transform: translateY(20px);
 }
 .container ul li {
   cursor: pointer;
@@ -99,31 +103,35 @@ section {
   position: relative;
   transform: translateX(500px);
 }
-.container ul li:nth-of-type(1) { animation: justShow 2s 2s forwards; }
-.container ul li:nth-of-type(2) { animation: justShow 2s 2.5s forwards; }
-.container ul li:nth-of-type(3) { animation: justShow 2s 3s forwards; }
-.container ul li:nth-of-type(4) { animation: justShow 2s 3.5s forwards; }
-.container ul li:nth-of-type(5) { animation: justShow 2s 4s forwards; }
-.container ul li:nth-of-type(6) { animation: justShow 2s 4.5s forwards; }
-.uno {
-  animation: title 2s forwards;
+.container ul li:nth-of-type(1) { animation: justShow 3s 5s forwards; }
+.container ul li:nth-of-type(2) { animation: justShow 3s 5.5s forwards; }
+.container ul li:nth-of-type(3) { animation: justShow 3s 6s forwards; }
+.container ul li:nth-of-type(4) { animation: justShow 3s 6.5s forwards; }
+.container ul li:nth-of-type(5) { animation: justShow 3s 7s forwards; }
+.container ul li:nth-of-type(6) { animation: justShow 3s 7.5s forwards; }
+.container video {
+  min-width: 100vw;
+  min-height: 100vh;
+}
+.title {
+  animation: title 5s forwards;
   grid-column: 2/3;
   grid-row: 1;
   opacity: 0;
   position: relative;
   transform: translateY(30px);
 }
-.uno span {
-  border-bottom: 2px solid rgba(0, 120, 0, 0.6);
+.title span {
+  border-bottom: 2px solid rgba(255, 255, 0, 0.4);
   bottom: 20px;
   font-family: 'RozhaOne-Regular';
   font-size: calc(8em + 8vw);
   height: 0.99em;
   position: absolute;
 }
-.uno span::before {
-  animation: titleBar 3.5s 2s linear forwards;
-  background-color: #22AA33;
+.title span::before {
+  animation: titleBar 3s 2s forwards;
+  background-color: rgba(255, 255, 0, 0.8);
   content: '';
   height: calc(0.04em + 0.04vw);
   position: absolute;
@@ -134,8 +142,8 @@ section {
   50% { transform: translateY(3px); }
 }
 @keyframes title {
-  60% {
-    transform: translateY(-5px);
+  50% {
+    transform: translateY(-20px);
   }
   100% {
     opacity: 1;
@@ -153,7 +161,7 @@ section {
   }
 }
 @media only screen and (max-width: 768px) {
-  .uno span {
+  .title span {
       font-size: calc(6em + 6vw);
   }
   .container p {

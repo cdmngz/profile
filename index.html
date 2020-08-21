@@ -14,16 +14,16 @@
 
   <section>
     <div class="container">
+      <video src="video.mp4" autoplay muted loop alt="Thanks to Engin Akyurt in Pexels"></video>
 
-      <div class="uno"><span>Hola</span></div>
+      <div class="title"><span>Hola</span></div>
 
-      <p>Soy Carlos. Creador de apps.</p>
+      <p>Soy Carlos. Desarrollador web.<br>Sí, la cerveza es un método de pago.</p>
       
       <ul>
         <li>CV</li>
         <li>ChromeDino</li>
         <li>wOS</li>
-        <li>Shots</li>
         <li>Api's</li>
         <li>Keeped</li>
         <div id="under"></div>
@@ -31,10 +31,9 @@
     </div>
   </section>
 
-    <section></section>
+  <section id="load"></section>
 
   <script>
-
     
     // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
     let vh = window.innerHeight * 0.01;
@@ -46,7 +45,6 @@
       "https://cdmngz.github.io/cv/",
       "https://cdmngz.github.io/T-RexChrome/",
       "https://cdmngz.github.io/windows/",
-      "https://cdmngz.github.io/shots/",
       "https://cdmngz.github.io/apis/",
       "https://vue-calendario-c810c.web.app/"
     ]
@@ -54,7 +52,7 @@
     links.forEach( (elem, i) => (
       document.getElementsByTagName("li")[i].addEventListener("click", () => (
         window.scrollTo(0,Ysize),
-        document.getElementsByTagName("section")[1].innerHTML=`<object type="text/html" data="${elem}" ></object>`
+        document.querySelector('#load').innerHTML=`<object type="text/html" data="${elem}" ></object>`
       ))
     ))
 
