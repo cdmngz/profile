@@ -69,7 +69,7 @@ section {
 .container {
   display: grid;
   grid-template-columns: 10% 80% 10%;
-  grid-template-rows: 50% 10% 6% 10% auto;
+  grid-template-rows: 50% 6% 14% 10% 10% auto;
   height: 100vh;
   position: relative;
   width: 100vw;
@@ -79,13 +79,20 @@ section {
   padding: 0;
 }
 .container p {
-  animation: title 4s 2s forwards;
   font-family: 'Lobster', cursive;
   font-size: calc(1em + 1vw);
-  grid-column: 2/3;
-  grid-row: 2;
   opacity: 0;
   transform: translateY(10px);
+}
+.container p:nth-of-type(1) {
+  animation: title 4s 2s forwards;
+  grid-column: 2/3;
+  grid-row: 2;
+}
+.container p:nth-of-type(2) {
+  animation: title 4s 8s forwards;
+  grid-column: 2/3;
+  grid-row: 3;
 }
 .container ul {
   grid-column: 2/3;
@@ -152,7 +159,7 @@ section {
 }
 @keyframes titleBar {
   100% {
-    width: 60%;
+    width: 54%;
   }
 }
 @keyframes justShow {
